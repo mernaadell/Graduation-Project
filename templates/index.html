@@ -22,26 +22,48 @@
         <div class="form-group">
              <label>Select image</label>
              <div class="custom-file">
-               <input type="file" class="custom-file-input" name="image" id="image">
+               <input type="file"  name="image" id="image">
                <label class="custom-file-label" for="image">Select image...</label>
              </div>
            </div> 
    
-           <button type="submit" class="btn btn-primary">Upload</button>
+           <button type="submit" class="btn btn-dark">Upload</button>
    
          </form>
-              
+        </div>
+
+        <div class="btnn" style="padding-left: 200px;">
+          <form  style="margin:8px;float:left" action="/upload-image/bone" method="POST" enctype="multipart/form-data">
+            <button id="fb" type="submit" class="btn btn-primary">bones diagnosis</button>
+           </form>
+          <form   style="margin:8px ;float:left;" action="/upload-image/skin" method="POST" enctype="multipart/form-data">
+         <button type="submit" class="btn btn-secondary"">skin cancer diagnosis</button>
+        </form>
+        
+         <form  style="margin:8px ;float: left;"action="/upload-image/pneumonia" method="POST" enctype="multipart/form-data">
+          <button type="submit" class="btn btn-success">pneumonia diagnosis</button>
+         </form>
+        
+    </div>
+    <div style="padding-left: 400px;" class ="result">
+       
+    </div>
+    <div class="card border-dark mb-3" style="height: 200px;width: 300px; margin-left: 350px;margin-top: 100px;border-radius: 10px;">
+        <div class="card-header"><span style="margin-left:85px ;font-size: 25px;font-weight: 25px;font-style:oblique;">Result</span></div>
+        <div class="card-body text-dark">
+
+          <h4 style="margin-left: 80px;color: darkred;max-width: 100px;"card-title">{{result}}</h4>
+          
+        </div>
         </div>
     </div>
+    <!-- <div class="loader"></div> -->
+    <div style="margin-left:480px ;" class="loader" ></div>
 
-    <div class="loader" style="display:none;"></div>
-
-    <h3 id="result">
+    <!-- <h3 id="result">
         <span> </span>
-    </h3>
-    <div>
-        {{result}}
-    </div>
+    </h3> -->
+    
 </div>
 
 {% endblock %}
